@@ -67,20 +67,20 @@ addLayer("p", {
         },
         31: {
             title: "Garbage Man",
-            description: "Add 1 to Point gain",
+            description: "Add 69 to Point gain 69 times",
             cost: new Decimal(420420420),
             unlocked() { return hasUpgrade('p',23) && hasUpgrade('s',12)},
         },
         32: {
             title: "Garbage Boi",
-            description: "Add 1 to Point gain",
+            description: "times 69 to Point gain",
             cost: new Decimal(42042042069),
             unlocked() { return hasUpgrade('p',31) && hasUpgrade('s',12)},
         },
         33: {
             title: "Why Garbage",
-            description: "Add 1 to Point gain",
-            cost: new Decimal(420420420),
+            description: "do the last Upgrade Again",
+            cost: new Decimal(42042042069),
             unlocked() { return hasUpgrade('p',32) && hasUpgrade('s',12)},
         },
     },
@@ -142,5 +142,110 @@ addLayer("s", {
             done() { return player.s.points.gte(100)},
             unlocked() { return hasUpgrade('s',13)},
         },
-    }, 
+    },
+    branches: ['e'],
+})
+addLayer("e", {
+    name: "Explore", // This is optional, only used in a few places, If absent it just uses the layer id.
+    symbol: "E", // This appears on the layer's node. Default is the id with the first letter capitalized
+    position: 0, // Horizontal position within a row. By default it uses the layer id and sorts in alphabetical order
+    resetsNothing() {return hasMilestone('s',0)},
+    startData() { return {
+        unlocked: false,
+		points: new Decimal(0),
+    }},
+    color: "#80ff00",
+    requires: new Decimal(69696969), // Can be a function that takes requirement increases into account
+    resource: "Exploration Credits", // Name of prestige currency
+    baseResource: "Squares", // Name of resource prestige is based on
+    baseAmount() {return player.p.points}, // Get the current amount of baseResource
+    type: "static", // normal: cost to gain currency depends on amount gained. static: cost depends on how much you already have
+    exponent: 0.5, // Prestige currency exponent
+    gainMult() { // Calculate the multiplier for main currency from bonuses
+        mult = new Decimal(1)
+            if (hasUpgrade('s',13)) mult = mult.times(2)
+        return mult
+    },
+    gainExp() { // Calculate the exponent on main currency from bonuses
+        return new Decimal(1)
+    },
+    row: 2, // Row the layer is in on the tree (0 is the first row)
+    layerShown(){return hasUpgrade('p',23) || player.s.unlocked},
+    upgrades: {
+        11: {
+            title: "Squar",
+            description: "Double points and auto buy PP upgrades",
+            cost: new Decimal(1),
+        },
+        12: {
+            title: "Squar",
+            description: "Double points and auto buy PP upgrades",
+            cost: new Decimal(1),
+        },
+        13: {
+            title: "Squar",
+            description: "Double points and auto buy PP upgrades",
+            cost: new Decimal(1),
+        },
+        14: {
+            title: "Squar",
+            description: "Double points and auto buy PP upgrades",
+            cost: new Decimal(1),
+        },
+        15: {
+            title: "Squar",
+            description: "Double points and auto buy PP upgrades",
+            cost: new Decimal(1),
+        },
+        21: {
+            title: "Squar",
+            description: "Double points and auto buy PP upgrades",
+            cost: new Decimal(1),
+        },
+        22: {
+            title: "Squar",
+            description: "Double points and auto buy PP upgrades",
+            cost: new Decimal(1),
+        },
+        23: {
+            title: "Squar",
+            description: "Double points and auto buy PP upgrades",
+            cost: new Decimal(1),
+        },
+        24: {
+            title: "Squar",
+            description: "Double points and auto buy PP upgrades",
+            cost: new Decimal(1),
+        },
+        25: {
+            title: "Squar",
+            description: "Double points and auto buy PP upgrades",
+            cost: new Decimal(1),
+        },
+        31: {
+            title: "Squar",
+            description: "Double points and auto buy PP upgrades",
+            cost: new Decimal(1),
+        },
+        32: {
+            title: "Squar",
+            description: "Double points and auto buy PP upgrades",
+            cost: new Decimal(1),
+        },
+        33: {
+            title: "Squar",
+            description: "Double points and auto buy PP upgrades",
+            cost: new Decimal(1),
+        },
+        34: {
+            title: "Squar",
+            description: "Double points and auto buy PP upgrades",
+            cost: new Decimal(1),
+        },
+        35: {
+            title: "Squar",
+            description: "Double points and auto buy PP upgrades",
+            cost: new Decimal(1),
+        },
+    },
 })
