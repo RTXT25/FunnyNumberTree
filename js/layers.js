@@ -1,14 +1,14 @@
 addLayer("p", {
-    name: "prestige", // This is optional, only used in a few places, If absent it just uses the layer id.
-    symbol: "P", // This appears on the layer's node. Default is the id with the first letter capitalized
+    name: "pp", // This is optional, only used in a few places, If absent it just uses the layer id.
+    symbol: "PP", // This appears on the layer's node. Default is the id with the first letter capitalized
     position: 0, // Horizontal position within a row. By default it uses the layer id and sorts in alphabetical order
     startData() { return {
         unlocked: true,
 		points: new Decimal(0),
     }},
-    color: "#4BDC13",
-    requires: new Decimal(10), // Can be a function that takes requirement increases into account
-    resource: "prestige points", // Name of prestige currency
+    color: "#574713",
+    requires: new Decimal(69), // Can be a function that takes requirement increases into account
+    resource: "Prestige Points", // Name of prestige currency
     baseResource: "points", // Name of resource prestige is based on
     baseAmount() {return player.points}, // Get the current amount of baseResource
     type: "normal", // normal: cost to gain currency depends on amount gained. static: cost depends on how much you already have
@@ -22,7 +22,19 @@ addLayer("p", {
     },
     row: 0, // Row the layer is in on the tree (0 is the first row)
     hotkeys: [
-        {key: "p", description: "P: Reset for prestige points", onPress(){if (canReset(this.layer)) doReset(this.layer)}},
+        {key: "p", description: "P: Reset for Prestige points", onPress(){if (canReset(this.layer)) doReset(this.layer)}},
     ],
-    layerShown(){return true}
+    layerShown(){return true},
+    upgrades: {
+        11: {
+            title: "Nice",
+            description: "Gen Points",
+            cost: new Decimal(1),
+        },
+        12: {
+            title: "BrUh I HAte THe ColO(U)r Of thIs NOde It LooKs LikE A PEICE POO !!!!",
+            description: "Multiply by the Amount of characters in the name",
+            cost: new Decimal(34.5),
+        },
+    },
 })
