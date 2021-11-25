@@ -3,7 +3,7 @@ let modInfo = {
 	id: "69LOL",
 	author: "RTXT25",
 	pointsName: "points",
-	modFiles: ["layers.js", "tree.js"],
+	modFiles: ["layers.js", "tree.js", "temple.js"],
 
 	discordName: "",
 	discordLink: "",
@@ -53,6 +53,29 @@ function getPointGen() {
 	if (hasUpgrade('s',11)) gain = gain.times(2)
 	if (hasUpgrade('s',12)) gain = gain.times(2)
 	if (hasUpgrade('s',13)) gain = gain.times(2)
+
+	if (hasUpgrade('e',12)) gain = gain.times(69)
+	if (hasUpgrade('e',13)) gain = gain.times(69)
+	if (hasUpgrade('e',14)) gain = gain.times(69)
+	if (hasUpgrade('e',21)) gain = gain.times(69)
+	if (hasUpgrade('e',22)) gain = gain.times(69)
+	if (hasUpgrade('e',23)) gain = gain.times(69)
+	if (hasUpgrade('e',24)) gain = gain.times(69)
+	if (hasUpgrade('e',25)) gain = gain.times(69)
+	if (hasUpgrade('e',31)) gain = gain.times(69)
+	if (hasUpgrade('e',32)) gain = gain.times(69)
+	if (hasUpgrade('e',33)) gain = gain.times(69)
+	if (hasUpgrade('e',34)) gain = gain.times(69)
+	if (hasUpgrade('e',35)) gain = gain.times(69)
+	if (hasUpgrade('e',41)) gain = gain.times(69)
+	if (hasUpgrade('e',42)) gain = gain.times(69)
+	if (hasUpgrade('e',43)) gain = gain.times(69)
+	if (hasUpgrade('e',44)) gain = gain.times(69)
+	if (hasUpgrade('e',45)) gain = gain.times(69)
+	if (hasUpgrade('e',52)) gain = gain.times(69)
+	if (hasUpgrade('e',53)) gain = gain.times(69)
+	if (hasUpgrade('e',54)) gain = gain.times(69)
+
 
 	return gain
 }
